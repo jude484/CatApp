@@ -1,16 +1,19 @@
-class Eat (val name: String, var age: Int, var weight: Int) {
+class Cat(var name: String, var age: Int, var weight: Int) {
 
-
-    fun walk() {
-        weight--
+    fun walk(amount: Int) {
+        weight -= amount
     }
 
-    fun eat() {
-        weight++
+    fun eat(amount: Int): Boolean {
+        return if (weight + amount <= 20) {
+            weight += amount
+            true
+        } else {
+            false
+        }
     }
 
-    override fun toString() : String {
-        return "Name: $name Age: $age"
-
+    override fun toString(): String {
+        return "$name weighs $weight"
     }
 }
